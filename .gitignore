@@ -6,3 +6,5 @@ dist/
 migration/original.html
 private-backup/
 *.log
+
+.vercel

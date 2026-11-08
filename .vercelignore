@@ -1,4 +1,5 @@
 .git
+dist
 migration
 private-backup
 tests
