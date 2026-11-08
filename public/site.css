@@ -244,3 +244,28 @@ body{padding:0!important}#page{width:100%!important;max-width:none!important}#Co
   .entry-content .virtual-tour h2 { font-size:32px!important; }
   .virtual-tour-copy h3 { font-size:25px; }
 }
+
+/* Quiet, centered slideshow pagination. */
+.hero-controls {
+  left:50%;right:auto;bottom:28px;transform:translateX(-50%);
+  width:auto;padding:6px 12px;border:0;border-radius:30px;
+  background:#17141738;box-shadow:none;backdrop-filter:blur(8px);
+}
+.hero-control-meta,.hero-controls .hero-arrow { display:none; }
+.hero-control-row { gap:10px; }
+.hero-segments { position:relative;flex:none;width:140px;gap:5px; }
+.hero-controls .hero-segment { flex:0 0 24px;height:28px;padding:12px 0; }
+.hero-segment-track { height:2px;background:#ffffff80; }
+.hero-controls .hero-progress { display:none; }
+.hero-segments::after {
+  content:'';position:absolute;left:8px;top:10px;width:8px;height:8px;
+  border-radius:50%;background:white;box-shadow:0 1px 5px #0004;
+  transform:translateX(calc(var(--active-slide,0) * 29px));
+  transition:transform .5s cubic-bezier(.22,1,.36,1);pointer-events:none;
+}
+.hero-controls .hero-playback { width:24px;height:24px;flex-basis:24px;padding:6px; }
+#contact-form input:focus,#contact-form textarea:focus,#contact-form select:focus {
+  outline:0;border-color:#6d918d;box-shadow:0 0 0 2px #6d918d22;
+}
+#Middle { max-width:1160px; }
+@media(prefers-reduced-motion:reduce) { .hero-segments::after {transition:none;} }

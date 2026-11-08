@@ -12,7 +12,7 @@
     button.addEventListener('click',()=>show(index));hero.querySelector('.hero-segments').append(button);return button;
   });
   let current = 0, paused = reducedMotion.matches, timer, startedAt, remaining;
-  let animations = [], transition = 0;
+  let animations = [], transition = 0, nextZoomIn = true;
 
   function layoutText() {
     const width = hero.clientWidth, height = hero.clientHeight;
@@ -48,6 +48,11 @@
   function show(index, initial = false) {
     const generation = ++transition;
     clearTimeout(timer);
+    // Preserve the outgoing photograph's last frame throughout the crossfade.
+    for (const slide of slides) {
+      const image = slide.querySelector('img');
+      image.style.transform = getComputedStyle(image).transform;
+    }
     animations.forEach(animation => animation.cancel());
     animations = [];
     const previous = slides[current];
@@ -69,17 +74,14 @@
 
     layoutText();
     const image = active.querySelector('img');
-    const pan = Object.fromEntries([...image.dataset.panzoom.matchAll(/(\w+):([^;]+)/g)].map(m => [m[1], m[2]]));
-    const startScale = Number(pan.ss || 100) / 100, endScale = Number(pan.se || 100) / 100;
-    function transform(scale, offset = '0/0') {
-      const [x, y] = offset.split('/').map(Number);
-      return `translate(${x / 100 * (scale - 1) * hero.clientWidth / 2}px, ${y / 100 * (scale - 1) * hero.clientHeight / 2}px) scale(${scale})`;
-    }
+    const zoomIn = nextZoomIn;
+    nextZoomIn = !nextZoomIn;
+    image.style.transform = 'scale(1)';
     if (!reducedMotion.matches) {
       animations.push(image.animate([
-        {transform: transform(startScale, pan.os)},
-        {transform: transform(endScale, pan.oe)}
-      ], {duration: Number(pan.d || 10000), easing: 'linear', fill: 'both'}));
+        {transform: `scale(${zoomIn ? 1 : 1.12})`},
+        {transform: `scale(${zoomIn ? 1.12 : 1})`}
+      ], {duration: Number(active.dataset.duration || 7000), easing: 'linear', fill: 'both'}));
     }
     const occupied = new Set();
     const layers = [...active.querySelectorAll('.hero-text-layer')].sort((a,b) => Number(a.dataset.enter)-Number(b.dataset.enter));
@@ -101,6 +103,7 @@
     hero.querySelector('#slide-count').textContent = `${String(current+1).padStart(2,'0')} / ${String(slides.length).padStart(2,'0')}`;
     hero.querySelector('#hero-category').textContent=active.dataset.label;
     segments.forEach((button,index)=>{button.classList.toggle('is-active',index===current);if(index===current)button.setAttribute('aria-current','true');else button.removeAttribute('aria-current');});
+    hero.querySelector('.hero-segments').style.setProperty('--active-slide',current);
     const progress=segments[current].querySelector('.hero-progress');
     if(!reducedMotion.matches)animations.push(progress.animate([{transform:'scaleX(0)'},{transform:'scaleX(1)'}],{duration:Number(active.dataset.duration||7000),fill:'both',easing:'linear'}));
     else progress.style.transform='scaleX(1)';
