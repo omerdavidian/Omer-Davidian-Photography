@@ -1,0 +1,314 @@
+.ubermenu-skin-theme-default-styles {
+  font-size: 12px;
+  color: #888888;
+}
+.ubermenu-skin-theme-default-styles .ubermenu-target {
+  color: #555555;
+  padding: 10px 20px;
+}
+.ubermenu .ubermenu-item-layout-icon_left.ubermenu-item-layout-default > .ubermenu-target-title {
+	margin-left: 0;
+}
+.ubermenu-skin-theme-default-styles.ubermenu-sub-indicators .ubermenu-has-submenu-drop > .ubermenu-target {
+	padding-right: 20px; }
+.ubermenu-skin-theme-default-styles .ubermenu-submenu-type-flyout .ubermenu-item .ubermenu-target {
+	border-top: 1px solid #f0f0f0;
+	padding: 12px 27px; }
+.ubermenu-skin-theme-default-styles .ubermenu-submenu-type-flyout .ubermenu-item:first-child > .ubermenu-target {
+	border-top: 0; }
+.ubermenu-skin-theme-default-styles .ubermenu-target-description {
+  color: #aaaaaa;
+}
+.ubermenu-skin-theme-default-styles .ubermenu-highlight {
+  color: #4d90fe;
+}
+.ubermenu-skin-theme-default-styles.ubermenu-responsive-toggle {
+  color: #999999;
+  font-size: 28px;
+  text-transform: none;
+}
+.ubermenu-skin-theme-default-styles.ubermenu-responsive-toggle:hover {
+  color: #222222;
+}
+.ubermenu-skin-theme-default-styles {
+  border: none;
+  background: transparent;
+}
+.ubermenu-skin-theme-default-styles .ubermenu-item-level-0.ubermenu-current-menu-item > .ubermenu-target,
+.ubermenu-skin-theme-default-styles .ubermenu-item-level-0.ubermenu-current-menu-parent > .ubermenu-target,
+.ubermenu-skin-theme-default-styles .ubermenu-item-level-0.ubermenu-current-menu-ancestor > .ubermenu-target,
+.ubermenu-skin-theme-default-styles.ubermenu-responsive-toggle {
+  color: #ffffff;
+  background: transparent;
+}
+	/* Active item indicator */
+	.ubermenu-skin-theme-default-styles .ubermenu-item-level-0.ubermenu-current-menu-item > .ubermenu-target:before { font-family: FontAwesome; font-weight: 400; font-style: normal; text-decoration: inherit; -webkit-font-smoothing: antialiased; vertical-align: baseline; float: left; text-align: center; width: 20px; font-size: 20px; line-height: 18px; content: "\f105"; margin-left: -22px; }
+
+.ubermenu-skin-theme-default-styles .ubermenu-item.ubermenu-item-level-0 > .ubermenu-highlight {
+  color: #4d90fe;
+  background: transparent;
+}
+.ubermenu-skin-theme-default-styles.ubermenu-vertical .ubermenu-item-level-0 > .ubermenu-target {
+  background: transparent;
+}
+.ubermenu-skin-theme-default-styles .ubermenu-item-level-0 > .ubermenu-target {
+  color: #eeeeee;
+  text-transform: none;
+  border-left: none;
+  font-size: 14px;
+}
+.ubermenu-skin-theme-default-styles.ubermenu-horizontal .ubermenu-item-level-0 > .ubermenu-target {
+	padding-bottom: 20px;
+}
+.ubermenu-skin-theme-default-styles .ubermenu-item-level-0:first-child > .ubermenu-target {
+  box-shadow: none;
+}
+.ubermenu-nojs.ubermenu-skin-theme-default-styles .ubermenu-item-level-0:hover > .ubermenu-target,
+.ubermenu-skin-theme-default-styles .ubermenu-item-level-0.ubermenu-active > .ubermenu-target,
+.ubermenu-skin-theme-default-styles.ubermenu-responsive-toggle:hover {
+  background: transparent;
+  color: #ffffff;
+}
+.ubermenu-skin-theme-default-styles .ubermenu-item-level-0 > .ubermenu-submenu-type-stack > .ubermenu-item > .ubermenu-target {
+  color: #eeeeee;
+}
+.ubermenu-skin-theme-default-styles .ubermenu-item-level-0 > .ubermenu-submenu-type-stack > .ubermenu-item > .ubermenu-target:hover {
+  color: #ffffff;
+}
+.ubermenu-skin-theme-default-styles .ubermenu-tab-content-panel {
+  background: #ffffff;
+}
+ul.ubermenu-nav > li .ubermenu-submenu.ubermenu-submenu-type-mega .ubermenu-submenu {
+	background: transparent;
+}
+.ubermenu-skin-theme-default-styles .ubermenu-submenu {
+	padding-top: 0;
+}
+.ubermenu-skin-theme-default-styles .ubermenu-submenu,
+.ubermenu-skin-theme-default-styles .ubermenu-submenu .ubermenu-target {
+	color: #999;
+}
+.ubermenu-skin-theme-default-styles .ubermenu-item-level-0 > .ubermenu-submenu > .ubermenu-column-auto { 
+	padding: 11px 7px;
+}
+.ubermenu-skin-theme-default-styles .ubermenu-submenu-type-stack > .ubermenu-item-normal > .ubermenu-target {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.ubermenu-nojs.ubermenu-skin-theme-default-styles .ubermenu-submenu .ubermenu-target:hover,
+.ubermenu-skin-theme-default-styles .ubermenu-submenu .ubermenu-target:hover {
+	color: #4B4B4B; }
+.ubermenu-skin-theme-default-styles .ubermenu-submenu .ubermenu-target > .ubermenu-target-description {
+  color: #aaaaaa;
+}
+.ubermenu-skin-theme-default-styles .ubermenu-submenu .ubermenu-active > .ubermenu-target > .ubermenu-target-description {
+  color: #666666;
+}
+.ubermenu-skin-theme-default-styles .ubermenu-submenu .ubermenu-has-submenu-stack > .ubermenu-target {
+	color: #393939;
+	font-size: 15px;
+	font-weight: bold;
+	padding-top: 15px;
+	padding-bottom: .4em;
+}
+.ubermenu-skin-theme-default-styles .ubermenu-submenu .ubermenu-has-submenu-stack > .ubermenu-target:hover {
+  color: #222222;
+}
+.ubermenu-skin-theme-default-styles .ubermenu-submenu .ubermenu-current-menu-item > .ubermenu-target {
+}
+.ubermenu-nojs.ubermenu-skin-theme-default-styles .ubermenu-submenu .ubermenu-tabs .ubermenu-tab:hover > .ubermenu-target,
+.ubermenu-skin-theme-default-styles .ubermenu-submenu .ubermenu-tab.ubermenu-active > .ubermenu-target {
+  background: #eeeeee;
+  color: #111111;
+}
+.ubermenu-skin-theme-default-styles .ubermenu-tabs-group,
+.ubermenu-skin-theme-default-styles .ubermenu-tab > .ubermenu-target,
+.ubermenu-skin-theme-default-styles .ubermenu-tab-content-panel {
+  border-color: #eeeeee;
+}
+.ubermenu-skin-theme-default-styles .ubermenu-submenu-drop {
+	padding-top: 0; padding-bottom: 1px; border: 1px solid #e0e0e0; 
+	border-color: rgba(0,0,0,.08) rgba(0,0,0,.08) rgba(0,0,0,.09); 
+	-moz-background-clip: padding!important; -webkit-background-clip: padding!important; background-clip: padding-box!important; /* allows border to overlay bg content instead of menu */
+}
+.ubermenu-skin-theme-default-styles.ubermenu-horizontal .ubermenu-item-level-0 > .ubermenu-submenu-drop {
+  border-top: 0;
+}
+.ubermenu-skin-theme-default-styles .ubermenu-submenu.ubermenu-submenu-type-flyout {
+	min-width: 220px; }
+.ubermenu-skin-theme-default-styles {
+  border: none;
+  font-size: 13px;
+}
+.ubermenu-skin-theme-default-styles .ubermenu-submenu-drop {
+	-webkit-box-shadow: 1px 2px 8px rgba(0,0,0,.1);
+	-moz-box-shadow: 1px 2px 8px rgba(0,0,0,.1);
+	box-shadow: 1px 2px 8px rgba(0,0,0,.1);
+}
+
+/* VERTICAL MENU ALIGNMENT FIX - Make vertical menus align in columns for responsive dispaly */
+/* might be needed as fix in UberMenu core CSS */
+.ubermenu-vertical .ubermenu-item-level-0 {
+    display: inline-block;
+}
+.ubermenu-vertical .ubermenu-item.ubermenu-item-level-0.ubermenu-relative.ubermenu-active > .ubermenu-submenu-drop.ubermenu-submenu-align-vertical_parent_item {
+    top: auto;
+}
+
+
+
+/* Minimum width of 960 pixels. */
+@media screen and (min-width: 960px) {
+
+
+}
+
+/* Larger menus only */
+@media screen and (min-width:960px) {
+
+	/* VERTICAL MENU ALIGNMENT FIX - Reverse vertical menu responsive override  */
+	/* might be needed as fix in UberMenu core CSS */
+	.ubermenu-vertical .ubermenu-item-level-0 {
+	    display: block;
+	}
+	.ubermenu-vertical .ubermenu-item.ubermenu-item-level-0.ubermenu-relative.ubermenu-active > .ubermenu-submenu-drop.ubermenu-submenu-align-vertical_parent_item {
+	    top: 0px;
+	}
+
+	/* HORIZONTAL MENU ALIGNMENT FIX */
+	/* Force menu to right */
+	.ubermenu-items-align-left.ubermenu-horizontal .ubermenu-item.ubermenu-item-level-0, .ubermenu.ubermenu-horizontal .ubermenu-item.ubermenu-align-left {
+		float: none;
+	}
+
+	/* Active item indicator (adjust position) */
+	.ubermenu-skin-theme-default-styles .ubermenu-item-level-0.ubermenu-current-menu-item > .ubermenu-target:before { margin-left: 0; margin-top: 1px; }
+	/* Vertical Menu - Top Level: Current Item Indicator */
+	.ubermenu-vertical.ubermenu-skin-theme-default-styles .ubermenu-item-level-0.ubermenu-current-menu-item > .ubermenu-target:before { 
+		display: block; float: none; width: 40px; position: absolute; right: 0; text-align: left;
+		-webkit-transition: width .1s ease-out .1s; -moz-transition: width .1s ease-out .1s; -o-transition: width .1s ease-in-out .1s; transition: width .1s ease-out .1s; }
+	.ubermenu-vertical.ubermenu-skin-theme-default-styles .ubermenu-item-level-0.ubermenu-current-menu-item > .ubermenu-target:hover:before { width: 35px; }
+
+	.ubermenu-item > .ubermenu-submenu .ubermenu-submenu-drop, .ubermenu-item > .ubermenu-submenu .ubermenu-submenu-drop { margin-left: -1px; }
+
+	.ubermenu-sub-indicators .ubermenu-item-level-0.ubermenu-item-has-children > a.ubermenu-target:after {
+		content: '';
+		top: auto;
+		right: auto;
+		bottom: -1px;
+		left: 50%;
+		margin-left: -12px;
+		margin-bottom: -12px;
+		border-color: transparent;
+		border-style: none solid solid solid;
+		border-width: 0 12px 12px 12px;
+		padding: 0;
+		-webkit-transition: border-color .15s ease-out .25s, margin .2s ease-out .2s;
+		-moz-transition: border-color .15s ease-out .25s, margin .2s ease-out .2s;
+		-o-transition: border-color .15s ease-out .25s, margin .2s ease-out .2s;
+		transition: border-color .15s ease-out .25s, margin .2s ease-out .2s; }
+	.ubermenu-sub-indicators .ubermenu-item-level-0.ubermenu-item-has-children > a.ubermenu-target:hover:after, 
+	.ubermenu-sub-indicators .ubermenu-item-level-0.ubermenu-item-has-children.ubermenu-active > a.ubermenu-target:after {
+		margin-bottom: -1px;
+		border-bottom-color: #fff;
+		-webkit-transition: border-color .2s ease-out .2s, margin .25s ease-out .1s;
+		-moz-transition: border-color .2s ease-out .2s, margin .25s ease-out .1s;
+		-o-transition: border-color .2s ease-out .2s, margin .25s ease-out .1s;
+		transition: border-color .2s ease-out .2s, margin .25s ease-out .1s; }
+	.ubermenu.ubermenu-horizontal { padding: 5px 0 0; }
+
+
+	/* Left Vertical Navigation */
+	.full-width-left .ubermenu-skin-theme-default-styles.ubermenu-vertical > ul > li > .ubermenu-submenu.ubermenu-submenu-drop,
+	.boxed-left .ubermenu-skin-theme-default-styles.ubermenu-vertical > ul > li > .ubermenu-submenu.ubermenu-submenu-drop {
+		border-left: 0;
+		-webkit-box-shadow: 2px 1px 8px rgba(0,0,0,.1);
+		-moz-box-shadow: 2px 1px 8px rgba(0,0,0,.1);
+		box-shadow: 2px 1px 8px rgba(0,0,0,.1); }
+	.full-width-left .ubermenu-skin-theme-default-styles .ubermenu-item-level-0 > .ubermenu-target,
+	.boxed-left .ubermenu-skin-theme-default-styles .ubermenu-item-level-0 > .ubermenu-target {
+		text-align: right;
+		padding-right: 50px;
+		-webkit-transition: padding .1s ease-out .1s;
+		-moz-transition: padding .1s ease-out .1s;
+		-o-transition: padding .1s ease-out .1s;
+		transition: padding .1s ease-out .1s; }
+	.full-width-left .ubermenu-skin-theme-default-styles .ubermenu-item-level-0 > .ubermenu-target:hover,
+	.boxed-left .ubermenu-skin-theme-default-styles .ubermenu-item-level-0 > .ubermenu-target:hover {
+		padding-right: 45px; }
+	.ubermenu-vertical.ubermenu-sub-indicators .ubermenu-item-level-0.ubermenu-item-has-children > a.ubermenu-target:after {
+		content: '';
+		top: 50%;
+		right: 0;
+		bottom: auto;
+		left: auto;
+		margin-top: -12px;
+		margin-right: -15px;
+		border-color: transparent;
+		border-style: solid solid solid none;
+		border-width: 12px 12px 12px 0;
+		padding-right: 0; }
+	.ubermenu-vertical.ubermenu-sub-indicators .ubermenu-item-level-0.ubermenu-item-has-children > a.ubermenu-target:hover:after, 
+	.ubermenu-vertical.ubermenu-sub-indicators .ubermenu-item-level-0.ubermenu-item-has-children.ubermenu-active > a.ubermenu-target:after {
+		margin-right: 0;
+		border-right-color: #fff;
+		border-bottom-color: transparent; }
+	.ubermenu-skin-theme-default-styles.ubermenu-vertical .ubermenu-item.ubermenu-item-level-0.ubermenu-relative.ubermenu-active > .ubermenu-submenu-drop.ubermenu-submenu-type-mega, 
+	.ubermenu-skin-theme-default-styles.ubermenu-vertical .ubermenu-item.ubermenu-item-level-0.ubermenu-relative.ubermenu-active > .ubermenu-submenu-drop.ubermenu-submenu-type-mega.ubermenu-submenu-align-vertical_parent_item {
+		top: -18px; }
+	.ubermenu-skin-theme-default-styles.ubermenu-vertical .ubermenu-item.ubermenu-item-level-0.ubermenu-relative.ubermenu-active > .ubermenu-submenu-drop.ubermenu-submenu-type-flyout, 
+	.ubermenu-skin-theme-default-styles.ubermenu-vertical .ubermenu-item.ubermenu-item-level-0.ubermenu-relative.ubermenu-active > .ubermenu-submenu-drop.ubermenu-submenu-type-flyout.ubermenu-submenu-align-vertical_parent_item {
+		top: -4px; }
+
+	/* Right Vertical Navigation */
+	.full-width-right .ubermenu-vertical .ubermenu-item > .ubermenu-submenu-drop, 
+	.boxed-right .ubermenu-vertical .ubermenu-item > .ubermenu-submenu-drop {
+		left: auto !important;
+		right: 100%;
+		margin-right: 0; }
+	.full-width-right .ubermenu-skin-theme-default-styles.ubermenu-vertical > ul > li > .ubermenu-submenu.ubermenu-submenu-drop,
+	.boxed-right .ubermenu-skin-theme-default-styles.ubermenu-vertical > ul > li > .ubermenu-submenu.ubermenu-submenu-drop {
+		border-right: 0;
+		-webkit-box-shadow: -2px 1px 8px rgba(0,0,0,.1);
+		-moz-box-shadow: -2px 1px 8px rgba(0,0,0,.1);
+		box-shadow: -2px 1px 8px rgba(0,0,0,.1); }
+	.full-width-right .ubermenu-skin-theme-default-styles .ubermenu-item-level-0 > .ubermenu-target,
+	.boxed-right .ubermenu-skin-theme-default-styles .ubermenu-item-level-0 > .ubermenu-target {
+		padding-left: 50px;
+		-webkit-transition: padding .1s ease-out .1s;
+		-moz-transition: padding .1s ease-out .1s;
+		-o-transition: padding .1s ease-out .1s;
+		transition: padding .1s ease-out .1s; }
+	.full-width-right .ubermenu-skin-theme-default-styles .ubermenu-item-level-0 > .ubermenu-target:hover,
+	.boxed-right .ubermenu-skin-theme-default-styles .ubermenu-item-level-0 > .ubermenu-target:hover {
+		padding-left: 45px; }
+	.full-width-right .ubermenu-vertical.ubermenu-sub-indicators .ubermenu-item-level-0.ubermenu-item-has-children > a.ubermenu-target:after, 
+	.boxed-right .ubermenu-vertical.ubermenu-sub-indicators .ubermenu-item-level-0.ubermenu-item-has-children > a.ubermenu-target:after {
+		left: 0;
+		right: auto;
+		margin-left: -15px;
+		margin-right: auto;
+		border-color: transparent;
+		border-style: solid none solid solid;
+		border-width: 12px 0 12px 12px;
+		padding-left: 0; }
+	.full-width-right .ubermenu-vertical.ubermenu-sub-indicators .ubermenu-item-level-0.ubermenu-item-has-children > a.ubermenu-target:hover:after, 
+	.full-width-right .ubermenu-vertical.ubermenu-sub-indicators .ubermenu-item-level-0.ubermenu-item-has-children.ubermenu-active > a.ubermenu-target:after,
+	.boxed-right .ubermenu-vertical.ubermenu-sub-indicators .ubermenu-item-level-0.ubermenu-item-has-children > a.ubermenu-target:hover:after, 
+	.boxed-right .ubermenu-vertical.ubermenu-sub-indicators .ubermenu-item-level-0.ubermenu-item-has-children.ubermenu-active > a.ubermenu-target:after {
+		margin-left: 0;
+		border-left-color: #fff;
+		border-bottom-color: transparent; }
+	.full-width-right .ubermenu-vertical .ubermenu-item-level-0>.ubermenu-submenu-drop, 
+	.boxed-right .ubermenu-vertical .ubermenu-item-level-0>.ubermenu-submenu-drop {
+		clip: rect(-5000px,600px,5000px,-5000px); }
+	.full-width-right .ubermenu.ubermenu-vertical .ubermenu-submenu .ubermenu-submenu-type-flyout,
+	.boxed-right .ubermenu.ubermenu-vertical .ubermenu-submenu .ubermenu-submenu-type-flyout {
+		clip: auto; }
+	.full-width-right .ubermenu-vertical.ubermenu-sub-indicators .ubermenu-submenu-type-flyout > .ubermenu-has-submenu-drop > .ubermenu-target:after,
+	.boxed-right .ubermenu-vertical.ubermenu-sub-indicators .ubermenu-submenu-type-flyout > .ubermenu-has-submenu-drop > .ubermenu-target:after {
+		content: "\f104";
+		right: auto;
+		left: 10px; }
+
+}
