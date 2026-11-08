@@ -138,3 +138,55 @@ body{padding:0!important}#page{width:100%!important;max-width:none!important}#Co
   #masthead { overflow-y:auto !important; }
   #MastheadSidebar-2 { position:relative !important; top:auto !important; bottom:auto !important; margin-top:32px; padding-bottom:24px; }
 }
+
+/* Original layered hero typography, animated by hero.js. */
+.hero { background: #171717; }
+.hero-slide { position: absolute; inset: 0; overflow: hidden; }
+.hero-slide > img { will-change: transform; }
+.hero .hero-slide figcaption {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  text-transform: none;
+  pointer-events: none;
+}
+.hero-text-layer {
+  position: absolute;
+  display: block;
+  width: max-content;
+  max-width: calc(100% - 32px);
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0;
+  text-shadow: 0 2px 12px #0003;
+  pointer-events: auto;
+  will-change: transform, opacity;
+}
+.hero-text-layer[hidden] { display: none; }
+.hero-text-layer:hover, .hero-text-layer:focus-visible { color: #fff; }
+.hero-controls [data-hero='pause'] { font-size: 14px; min-width: 54px; }
+/* Match the original title-bottom-attached treatment: the letters merge with
+   the following section, with no backdrop wider than the title itself. */
+.section-banner h2 {
+  width: max-content;
+  max-width: calc(100% - 60px);
+  right: 40px;
+  bottom: 0;
+  margin-bottom: -.11em !important;
+  padding: 0;
+  background: none;
+  color: #edeae8;
+  line-height: .8;
+  letter-spacing: -.01em;
+  font-size: clamp(45px, 6vw, 100px);
+  text-shadow: none;
+}
+@media(max-width:767px) {
+  .section-banner h2 { right: 20px; font-size: 40px; }
+  .hero-controls { gap: 10px; padding: 6px 10px; }
+  .hero-text-layer { max-width: calc(100% - 48px); }
+}

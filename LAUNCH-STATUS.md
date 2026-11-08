@@ -16,8 +16,11 @@ The original branding, photography, sidebar, fonts, background colors, section
 order and full-width banners remain. The old loading overlay and WordPress
 plugin runtime are removed. Galleries have native controls and an accessible
 image dialog; mobile navigation, before/after comparison and contact inputs are
-usable at 390px without horizontal page overflow. The hero uses manual controls
-instead of the previous animated text and automatic slideshow.
+usable at 390px without horizontal page overflow. The hero now recreates all 14
+original text layers, their entry/exit timings, seven-second automatic slide
+cycle, and original zoom/pan settings using native browser animation. It includes
+pause/manual controls and honors reduced-motion preferences. Section headings
+use the original bottom-attached lettering that blends into the next background.
 
 Ten automated form/security tests pass. The local asset audit checks 360 active
 references with no missing files; 117 image elements are in the portfolio.
