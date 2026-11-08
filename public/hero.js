@@ -5,6 +5,12 @@
   const slides = [...hero.querySelectorAll('.hero-slide')];
   const pauseButton = hero.querySelector('[data-hero="pause"]');
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  const segments = slides.map((slide,index) => {
+    const button=document.createElement('button');button.type='button';button.className='hero-segment';
+    button.setAttribute('aria-label',`Show ${slide.dataset.label} collection`);button.title=slide.dataset.label;
+    button.innerHTML='<span class="hero-segment-track"><span class="hero-progress"></span></span>';
+    button.addEventListener('click',()=>show(index));hero.querySelector('.hero-segments').append(button);return button;
+  });
   let current = 0, paused = reducedMotion.matches, timer, startedAt, remaining;
   let animations = [], transition = 0;
 
@@ -29,7 +35,7 @@
   function updatePlayback() {
     const stopped = paused || document.hidden;
     for (const animation of animations) stopped ? animation.pause() : animation.play();
-    pauseButton.textContent = paused ? 'Play' : 'Pause';
+    pauseButton.querySelector('[data-hero-icon]').innerHTML=paused?'<path d="m9 5 10 7-10 7Z"/>':'<path d="M9 6v12M15 6v12"/>';
     pauseButton.setAttribute('aria-label', paused ? 'Play slideshow' : 'Pause slideshow');
     pauseButton.setAttribute('aria-pressed', String(paused));
     hero.querySelector('#slide-count').setAttribute('aria-live', paused ? 'polite' : 'off');
@@ -92,7 +98,12 @@
         {opacity: 0, transform: 'translateX(0)', offset: 1}
       ], {delay: enter, duration, fill: 'both'}));
     }
-    hero.querySelector('#slide-count').textContent = `${current + 1} / ${slides.length}`;
+    hero.querySelector('#slide-count').textContent = `${String(current+1).padStart(2,'0')} / ${String(slides.length).padStart(2,'0')}`;
+    hero.querySelector('#hero-category').textContent=active.dataset.label;
+    segments.forEach((button,index)=>{button.classList.toggle('is-active',index===current);if(index===current)button.setAttribute('aria-current','true');else button.removeAttribute('aria-current');});
+    const progress=segments[current].querySelector('.hero-progress');
+    if(!reducedMotion.matches)animations.push(progress.animate([{transform:'scaleX(0)'},{transform:'scaleX(1)'}],{duration:Number(active.dataset.duration||7000),fill:'both',easing:'linear'}));
+    else progress.style.transform='scaleX(1)';
     remaining = Number(active.dataset.duration || 7000);
     startedAt = performance.now();
     updatePlayback();

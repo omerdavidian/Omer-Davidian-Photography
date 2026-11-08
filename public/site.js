@@ -12,6 +12,20 @@ measurePage();window.addEventListener('resize',measurePage,{passive:true});
 const menu=$('#menu-toggle');
 menu.addEventListener('click',()=>{const open=$('#masthead').classList.toggle('menu-open');menu.setAttribute('aria-expanded',String(open));});
 $$('#MainNav a').forEach(a=>a.addEventListener('click',()=>{$('#masthead').classList.remove('menu-open');menu.setAttribute('aria-expanded','false');}));
+// Keep semantic section links and legacy bookmarks, without fragments in the bar.
+function scrollToSection(id, smooth=true){
+  const target=document.getElementById(id);if(!target)return false;
+  target.scrollIntoView({behavior:smooth&&!matchMedia('(prefers-reduced-motion: reduce)').matches?'smooth':'instant',block:'start'});
+  if(location.hash)history.replaceState(history.state,'',location.pathname+location.search);
+  return true;
+}
+document.addEventListener('click',event=>{
+  const link=event.target.closest('a[href^="#"]');
+  if(!link||event.defaultPrevented||event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;
+  const id=decodeURIComponent(link.getAttribute('href').slice(1));
+  if(document.getElementById(id)){event.preventDefault();scrollToSection(id);}
+});
+if(location.hash){const id=decodeURIComponent(location.hash.slice(1));scrollToSection(id,false);window.addEventListener('load',()=>scrollToSection(id,false),{once:true});}
 const dialog=$('#lightbox');let group=[],current=0;
 $$('.feature-gallery').forEach(gallery=>{const controls=document.createElement('div');controls.className='gallery-controls';const previous=document.createElement('button'),next=document.createElement('button');previous.type=next.type='button';previous.textContent='←';next.textContent='→';previous.setAttribute('aria-label','Previous gallery photograph');next.setAttribute('aria-label','Next gallery photograph');const counter=document.createElement('span');counter.textContent=`1 / ${gallery.children.length}`;controls.append(previous,counter,next);gallery.after(controls);let index=0;const move=delta=>{index=(index+delta+gallery.children.length)%gallery.children.length;gallery.scrollTo({left:gallery.children[index].offsetLeft-gallery.children[0].offsetLeft,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});counter.textContent=`${index+1} / ${gallery.children.length}`;};previous.addEventListener('click',()=>move(-1));next.addEventListener('click',()=>move(1));gallery.addEventListener('scroll',()=>{index=Math.round(gallery.scrollLeft/gallery.clientWidth);counter.textContent=`${Math.min(index+1,gallery.children.length)} / ${gallery.children.length}`;},{passive:true});});
 function showPhoto(){const link=group[current];$('#lightbox img').src=link.href;$('#lightbox img').alt=link.querySelector('img').alt;$('#lightbox figcaption').textContent=`${link.querySelector('img').title || link.querySelector('img').alt} · ${current+1} / ${group.length}`;}
