@@ -315,3 +315,12 @@ body{padding:0!important}#page{width:100%!important;max-width:none!important}#Co
 .about-section .wpb_single_image {margin:0;}
 .about-section h2 {color:#726963;}
 @media(max-width:767px){.about-section > .wpb_row > .vc_col-sm-8,.about-section > .wpb_row > .vc_col-sm-4 {width:100%!important;}}
+
+/* Crossfade full photographs rather than scrolling a strip. */
+.feature-gallery.animated-gallery {display:block!important;position:relative;overflow:hidden;touch-action:pan-y;}
+.animated-gallery > li {position:absolute!important;inset:0;display:block;width:100%!important;height:100%;opacity:0;pointer-events:none;transition:opacity 900ms ease;}
+.animated-gallery > li.is-active {opacity:1;pointer-events:auto;z-index:1;}
+.animated-gallery > li > a {width:100%;height:100%;overflow:hidden;}
+.animated-gallery img {will-change:transform;transform-origin:center;}
+.gallery-controls button:last-child {font-size:13px;}
+@media(prefers-reduced-motion:reduce){.animated-gallery > li{transition:none;}}
