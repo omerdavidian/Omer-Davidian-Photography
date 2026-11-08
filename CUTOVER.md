@@ -49,7 +49,24 @@ original HostGator nameservers; the original HostGator zone was not edited.
 Do not remove mail-related records. Resend subdomain records can remain without
 changing the old website or mailbox. Registration remains with HostGator.
 
-## Current verification status
+## Launch verification — November 8, 2026
 
-Nameserver save and public Cloudflare delegation verified; all original records
-copied. Website cutover, final mail delivery and launch checks are in progress.
+- Cloudflare zone active and public delegation confirmed.
+- Apex and www changed to the project-specific Vercel CNAME target, DNS-only.
+- Vercel reports both domains verified and DNS correctly configured.
+- A renewable Vercel certificate for apex and www was issued; both HTTPS hosts
+  return 200 with the new portfolio and security headers.
+- Form test ODP-04000985 passed through the deployed browser form. Resend marked
+  it delivered, and Gmail confirmed it in the owner's inbox.
+- Replaying that real Turnstile token returned 400 and did not send another mail.
+- All original 23 DNS records were compared before the nameserver change.
+  The two website records were then changed; mail and other service records
+  remain as copied. Three Resend records were added under contact.
+- Ten form/security tests pass. The active local asset graph has 360 references
+  and no missing files. Desktop and 390px navigation, galleries and form checked.
+- No separate inquiry database is maintained; delivered owner email is the record.
+- No runtime error entries were found in the post-cutover Vercel log scan.
+
+Some recursive DNS caches can retain the previous website address until the
+original TTL expires. No HostGator hosting, mailboxes or registration were deleted.
+The original WordPress hosting remains available for rollback and full backups.

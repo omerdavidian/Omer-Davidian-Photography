@@ -1,5 +1,7 @@
 const $ = (selector, root=document) => root.querySelector(selector);
 const $$ = (selector, root=document) => [...root.querySelectorAll(selector)];
+function measurePage(){document.documentElement.style.setProperty('--page-width',`${document.documentElement.clientWidth}px`);}
+measurePage();window.addEventListener('resize',measurePage,{passive:true});
 const menu=$('#menu-toggle');
 menu.addEventListener('click',()=>{const open=$('#masthead').classList.toggle('menu-open');menu.setAttribute('aria-expanded',String(open));});
 $$('#MainNav a').forEach(a=>a.addEventListener('click',()=>{$('#masthead').classList.remove('menu-open');menu.setAttribute('aria-expanded','false');}));
