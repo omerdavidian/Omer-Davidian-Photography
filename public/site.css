@@ -361,3 +361,11 @@ body{padding:0!important}#page{width:100%!important;max-width:none!important}#Co
 .hero > .hero-playback:hover {opacity:.75;}
 .hero > .hero-playback:focus-visible {outline:2px solid white;outline-offset:2px;}
 .hero-controls {width:164px;}
+
+/* Minimal hero navigation: centered indicators and a bare playback icon. */
+.hero-controls {width:auto;gap:0;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none;}
+.hero-controls .hero-control-row {gap:12px;}
+.hero-controls .hero-playback {position:static;display:grid;place-items:center;flex:0 0 28px;width:28px;height:28px;padding:5px;border:0;border-radius:0;background:transparent;color:white;filter:drop-shadow(0 1px 3px #0009);}
+.hero-controls .hero-playback svg {width:18px;height:18px;}
+.hero-controls .hero-playback:hover {background:transparent;color:white;opacity:.75;transform:none;}
+.hero-controls .hero-playback:focus-visible {outline:2px solid white;outline-offset:3px;}
