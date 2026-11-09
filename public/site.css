@@ -346,3 +346,11 @@ body{padding:0!important}#page{width:100%!important;max-width:none!important}#Co
 .gallery-controls .gallery-playback {display:grid;place-items:center;width:28px;height:28px;padding:6px;border:1px solid #a99d9755;border-radius:50%;color:#76645e;background:transparent;}
 .gallery-playback svg {display:block;width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
 .gallery-controls .gallery-playback:hover {color:#663548;border-color:#66354880;background:#6635480a;}
+
+.gallery-frame {position:relative;}
+.gallery-frame .feature-gallery {margin-bottom:0!important;}
+.gallery-frame .gallery-playback {position:absolute;right:10px;bottom:10px;z-index:3;display:grid;place-items:center;width:32px;height:32px;padding:7px;border:0;border-radius:0;background:transparent;color:white;filter:drop-shadow(0 1px 3px #0009);cursor:pointer;}
+.gallery-frame .gallery-playback svg {width:18px;height:18px;}
+.gallery-frame .gallery-playback:hover {opacity:.75;}
+.gallery-frame .gallery-playback:focus-visible {outline:2px solid white;outline-offset:2px;}
+.gallery-frame + .gallery-controls {margin-top:10px;}
