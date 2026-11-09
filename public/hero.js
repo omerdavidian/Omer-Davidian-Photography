@@ -4,6 +4,7 @@
   if (!hero) return;
   const slides = [...hero.querySelectorAll('.hero-slide')];
   const pauseButton = hero.querySelector('[data-hero="pause"]');
+  hero.append(pauseButton);
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
   const segments = slides.map((slide,index) => {
     const button=document.createElement('button');button.type='button';button.className='hero-segment';

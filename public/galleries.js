@@ -27,10 +27,7 @@ document.querySelectorAll('.feature-gallery').forEach(gallery => {
     dots.append(dot);
     return dot;
   });
-  const frame = document.createElement('div');
-  frame.className = 'gallery-frame';
-  gallery.before(frame); frame.append(gallery, playback);
-  controls.append(dots); frame.after(controls);
+  controls.append(dots, playback); gallery.after(controls);
   const running = () => visible && !paused && !focused && !document.hidden && !document.querySelector('dialog[open]');
   function sync() {
     if (timer) { remaining = Math.max(0, remaining - (performance.now() - started)); clearTimeout(timer); timer = undefined; }
@@ -70,7 +67,7 @@ document.querySelectorAll('.feature-gallery').forEach(gallery => {
     remaining = duration; sync();
   }
   playback.addEventListener('click', () => { paused = !paused; sync(); });
-  const region = frame;
+  const region = gallery.parentElement;
   region.addEventListener('focusin', () => { focused = true; sync(); });
   region.addEventListener('focusout', event => { if (!region.contains(event.relatedTarget)) { focused = false; sync(); } });
   gallery.addEventListener('keydown', event => {

@@ -354,3 +354,10 @@ body{padding:0!important}#page{width:100%!important;max-width:none!important}#Co
 .gallery-frame .gallery-playback:hover {opacity:.75;}
 .gallery-frame .gallery-playback:focus-visible {outline:2px solid white;outline-offset:2px;}
 .gallery-frame + .gallery-controls {margin-top:10px;}
+
+/* Keep gallery controls together; the hero alone has corner playback. */
+.hero > .hero-playback {position:absolute;right:28px;bottom:28px;z-index:3;display:grid;place-items:center;width:32px;height:32px;padding:7px;border:0;border-radius:0;background:transparent;color:white;filter:drop-shadow(0 1px 3px #0009);cursor:pointer;}
+.hero > .hero-playback svg {display:block;width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
+.hero > .hero-playback:hover {opacity:.75;}
+.hero > .hero-playback:focus-visible {outline:2px solid white;outline-offset:2px;}
+.hero-controls {width:164px;}
