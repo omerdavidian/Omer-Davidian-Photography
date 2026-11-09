@@ -369,3 +369,5 @@ body{padding:0!important}#page{width:100%!important;max-width:none!important}#Co
 .hero-controls .hero-playback svg {width:18px;height:18px;}
 .hero-controls .hero-playback:hover {background:transparent;color:white;opacity:.75;transform:none;}
 .hero-controls .hero-playback:focus-visible {outline:2px solid white;outline-offset:3px;}
+.hero-controls .hero-playback:focus-visible {outline:0;filter:drop-shadow(0 0 4px #fff8) drop-shadow(0 1px 3px #0009);}
+.hero-controls .hero-playback:focus-visible svg {stroke-width:2.5;}
