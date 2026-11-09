@@ -34,7 +34,7 @@ document.querySelectorAll('.feature-gallery').forEach(gallery => {
     if (running()) {
       motion?.play(); started = performance.now(); timer = setTimeout(() => show(index + 1), remaining);
     } else motion?.pause();
-    playback.textContent = paused ? '▷' : 'Ⅱ';
+    playback.innerHTML = `<svg aria-hidden="true" viewBox="0 0 24 24">${paused ? '<path d="m9 5 10 7-10 7Z"/>' : '<path d="M9 7v10M15 7v10"/>'}</svg>`;
     playback.setAttribute('aria-label', paused ? 'Play gallery slideshow' : 'Pause gallery slideshow');
     playback.setAttribute('aria-pressed', String(paused));
   }

@@ -343,3 +343,6 @@ body{padding:0!important}#page{width:100%!important;max-width:none!important}#Co
 .gallery-dot.is-active::before {background:#663548;transform:scale(1.25);}
 .gallery-dot:hover::before {background:#663548;}
 .gallery-controls button:focus-visible {outline:2px solid #663548;outline-offset:2px;}
+.gallery-controls .gallery-playback {display:grid;place-items:center;width:28px;height:28px;padding:6px;border:1px solid #a99d9755;border-radius:50%;color:#76645e;background:transparent;}
+.gallery-playback svg {display:block;width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
+.gallery-controls .gallery-playback:hover {color:#663548;border-color:#66354880;background:#6635480a;}
