@@ -4,7 +4,7 @@ document.querySelectorAll('.feature-gallery').forEach(gallery => {
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   const duration = 7000;
   let index = 0, zoomIn = true, motion, timer, visible = false, paused = reduced.matches;
-  let hovered = false, focused = false, remaining = duration, started = 0;
+  let focused = false, remaining = duration, started = 0;
   gallery.classList.add('animated-gallery');
   gallery.setAttribute('aria-roledescription', 'carousel');
   const controls = document.createElement('div');
@@ -14,12 +14,21 @@ document.querySelectorAll('.feature-gallery').forEach(gallery => {
     element.type = 'button'; element.setAttribute('aria-label', label); element.textContent = text;
     return element;
   };
-  const previous = button('Previous gallery photograph', '←');
-  const next = button('Next gallery photograph', '→');
-  const playback = button('Pause gallery slideshow', 'Ⅱ');
-  const counter = document.createElement('span');
-  controls.append(previous, counter, next, playback); gallery.after(controls);
-  const running = () => visible && !paused && !hovered && !focused && !document.hidden && !document.querySelector('dialog[open]');
+  const playback = button('Pause gallery slideshow', '\u2161');
+  playback.className = 'gallery-playback';
+  const dots = document.createElement('div');
+  dots.className = 'gallery-dots';
+  dots.setAttribute('role', 'group');
+  dots.setAttribute('aria-label', 'Choose gallery photograph');
+  const navigation = slides.map((slide, position) => {
+    const dot = button(`Show gallery photograph ${position + 1} of ${slides.length}`, '');
+    dot.className = 'gallery-dot';
+    dot.addEventListener('click', () => show(position));
+    dots.append(dot);
+    return dot;
+  });
+  controls.append(dots, playback); gallery.after(controls);
+  const running = () => visible && !paused && !focused && !document.hidden && !document.querySelector('dialog[open]');
   function sync() {
     if (timer) { remaining = Math.max(0, remaining - (performance.now() - started)); clearTimeout(timer); timer = undefined; }
     if (running()) {
@@ -50,15 +59,15 @@ document.querySelectorAll('.feature-gallery').forEach(gallery => {
       {transform: `scale(${zoomIn ? 1.1 : 1})`}
     ], {duration, fill: 'both', easing: 'linear'});
     zoomIn = !zoomIn;
-    counter.textContent = `${index + 1} / ${slides.length}`;
+    navigation.forEach((dot, position) => {
+      dot.classList.toggle('is-active', position === index);
+      if (position === index) dot.setAttribute('aria-current', 'true');
+      else dot.removeAttribute('aria-current');
+    });
     remaining = duration; sync();
   }
-  previous.addEventListener('click', () => show(index - 1));
-  next.addEventListener('click', () => show(index + 1));
   playback.addEventListener('click', () => { paused = !paused; sync(); });
   const region = gallery.parentElement;
-  region.addEventListener('mouseenter', () => { hovered = true; sync(); });
-  region.addEventListener('mouseleave', () => { hovered = false; sync(); });
   region.addEventListener('focusin', () => { focused = true; sync(); });
   region.addEventListener('focusout', event => { if (!region.contains(event.relatedTarget)) { focused = false; sync(); } });
   gallery.addEventListener('keydown', event => {

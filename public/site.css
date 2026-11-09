@@ -334,3 +334,12 @@ body{padding:0!important}#page{width:100%!important;max-width:none!important}#Co
 .portrait-details-content {padding:10px 0 4px 26px;}
 .portrait-details-content p {margin:0;}
 @media(max-width:767px){.portrait-details summary {font-size:25px;}}
+
+/* Compact circular navigation for the smaller photographic slideshows. */
+.gallery-controls {gap:10px;}
+.gallery-dots {display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:2px;}
+.gallery-controls .gallery-dot {display:grid;place-items:center;width:24px;height:32px;padding:0;flex:0 0 24px;}
+.gallery-dot::before {content:'';width:7px;height:7px;border-radius:50%;background:#b7afaa;transition:background .2s,transform .2s;}
+.gallery-dot.is-active::before {background:#663548;transform:scale(1.25);}
+.gallery-dot:hover::before {background:#663548;}
+.gallery-controls button:focus-visible {outline:2px solid #663548;outline-offset:2px;}
